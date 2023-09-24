@@ -1,0 +1,33 @@
+.project1{
+    background-image: url(../../assets/img/sports-club.png);
+    background-size: cover;
+    transition: 6s;
+}
+.project1:hover{
+    background-position: bottom;
+
+}
+.project2{
+    background-image: url(../../assets//img/the-the-toy.png);
+    background-size: cover;
+    transition: 6s;
+} 
+.project2:hover{
+    background-position: bottom;
+}
+.project3{
+    background-image: url(../../assets/img/recipe.png);
+    background-size: cover;
+    transition: 6s;  
+}
+.project4{
+    background-image: url(../../assets/img/the-zamaluxe-x4j2.vercel.app_.png);
+    background-size: cover;
+    transition: 6s;  
+}
+.project3:hover{
+    background-position: bottom;
+}
+.project4:hover{
+    background-position: bottom;
+}
