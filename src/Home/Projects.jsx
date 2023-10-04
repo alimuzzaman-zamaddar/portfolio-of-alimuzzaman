@@ -1,7 +1,4 @@
 import React from "react";
-// import zSport from "../assets/img/zamaddar-sports-club.web.app_ (2).png";
-// import toyStore from "../assets/img/the-toy-store-9536d.web.app_.png";
-// import woknroll from "../assets/img/the-wok-n-roll-recipe.web.app_.png";
 import "./Projects/Projects.css";
 
 const Projects = () => {

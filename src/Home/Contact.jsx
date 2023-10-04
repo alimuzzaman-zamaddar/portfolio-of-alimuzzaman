@@ -10,7 +10,7 @@ const Contact = () => {
         <div className="flex ">
           <div className="form-control w-1/2 mr-5">
             <label className="label">
-              <span className="label-text">Your Name</span>
+              <span className="label-text text-[#d3aa2f]">Your Name</span>
             </label>
             <input
               type="text"
@@ -19,18 +19,18 @@ const Contact = () => {
           </div>
           <div className="form-control w-1/2">
             <label className="label">
-              <span className="label-text">Your Email</span>
+              <span className="label-text text-[#d3aa2f]">Your Email</span>
             </label>
             <input
               type="text"
-              className="input input-bordered"
+              className="input input-bordered text-[#d3aa2f]"
             />
           </div>
         </div>
         <div className="flex">
           <div className="form-control mr-5 w-1/2">
             <label className="label">
-              <span className="label-text">Your Phone Number</span>
+              <span className="label-text text-[#d3aa2f]">Your Phone Number</span>
             </label>
             <input
               type="text"
@@ -39,7 +39,7 @@ const Contact = () => {
           </div>
           <div className="form-control w-1/2">
             <label className="label">
-              <span className="label-text">Subject</span>
+              <span className="label-text text-[#d3aa2f]">Subject</span>
             </label>
             <input
               type="text"
@@ -49,7 +49,7 @@ const Contact = () => {
         </div>
         <div className="form-control">
             <label className="label">
-              <span className="label-text">Message</span>
+              <span className="label-text text-[#d3aa2f]">Message</span>
             </label>
             <textarea
               type="text"
