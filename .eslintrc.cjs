@@ -11,5 +11,7 @@ module.exports = {
   plugins: ['react-refresh'],
   rules: {
     'react-refresh/only-export-components': 'warn',
+    // The project uses plain JSX components without runtime PropTypes.
+    'react/prop-types': 'off',
   },
 }

@@ -2,4 +2,247 @@
 @tailwind components;
 @tailwind utilities;
 
-  
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+
+  html {
+    -webkit-tap-highlight-color: transparent;
+    scroll-padding-top: 96px;
+  }
+
+  html:not(.lenis) {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-ink font-sans text-slate-100 antialiased;
+    overflow-x: clip;
+    background-image:
+      radial-gradient(ellipse 80% 50% at 50% -10%, rgba(139, 92, 246, 0.13), transparent 70%),
+      radial-gradient(ellipse 60% 40% at 90% 30%, rgba(34, 211, 238, 0.06), transparent 70%);
+    background-attachment: fixed;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display;
+    letter-spacing: -0.035em;
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 60;
+    pointer-events: none;
+    opacity: 0.035;
+    mix-blend-mode: soft-light;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  }
+
+  ::selection {
+    background: rgba(139, 92, 246, 0.4);
+    color: #ffffff;
+  }
+
+  :focus-visible {
+    outline: 2px solid #22d3ee;
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #080b12;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #26304a;
+    border: 2px solid #080b12;
+    border-radius: 999px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #3b4a6d;
+  }
+}
+
+@layer components {
+  .container-page {
+    @apply mx-auto w-full max-w-page px-5 sm:px-8;
+  }
+
+  .section {
+    @apply relative py-24 sm:py-28 lg:py-32;
+  }
+
+  .eyebrow {
+    @apply inline-flex items-center gap-2.5 font-mono text-[10px] font-medium uppercase tracking-[0.3em] text-slate-400 sm:text-[11px];
+  }
+
+  .section-title {
+    @apply text-[2.15rem] font-semibold leading-[1.06] sm:text-5xl lg:text-[3.35rem];
+    letter-spacing: -0.045em;
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(102deg, #f8fafc 0%, #c4b5fd 32%, #67e8f9 68%, #bef264 100%);
+    background-size: 220% auto;
+    animation: gradient-pan 12s ease-in-out infinite;
+  }
+
+  .text-gradient-accent {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(100deg, #a78bfa 0%, #22d3ee 55%, #a3e635 100%);
+    background-size: 220% auto;
+    animation: gradient-pan 10s ease-in-out infinite;
+  }
+
+  .glass {
+    @apply border border-white/[0.08] bg-white/[0.035] backdrop-blur-xl;
+  }
+
+  .panel {
+    @apply rounded-3xl border border-white/[0.08] bg-surface/60 backdrop-blur-xl;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-5 py-3 text-sm font-medium transition-all duration-300 ease-smooth sm:px-6;
+  }
+
+  .btn-primary {
+    @apply btn bg-white text-ink hover:bg-accent-soft;
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.08), 0 16px 40px -20px rgba(139, 92, 246, 0.9);
+  }
+
+  .btn-primary:hover {
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.14), 0 22px 50px -18px rgba(139, 92, 246, 1);
+  }
+
+  .btn-outline {
+    @apply btn border border-white/[0.14] bg-white/[0.03] text-slate-100 hover:border-accent/60 hover:bg-white/[0.07];
+  }
+
+  .btn-quiet {
+    @apply btn text-slate-300 hover:text-white;
+  }
+
+  .icon-button {
+    @apply inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/[0.03] text-slate-300 transition-all duration-300 hover:border-accent/50 hover:bg-accent/10 hover:text-white;
+  }
+
+  .tag {
+    @apply inline-flex items-center rounded-full border border-white/[0.09] bg-white/[0.04] px-3 py-1 font-mono text-[10px] uppercase tracking-[0.12em] text-slate-300;
+  }
+
+  .paper-note {
+    background-color: #f2e7d5;
+    background-image: linear-gradient(145deg, rgba(255, 255, 255, 0.55), transparent 55%);
+    box-shadow: 0 18px 45px -20px rgba(0, 0, 0, 0.95);
+  }
+
+  .grid-lines {
+    background-image:
+      linear-gradient(to right, rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.045) 1px, transparent 1px);
+    background-size: 62px 62px;
+  }
+
+  .dot-grid {
+    background-image: radial-gradient(rgba(255, 255, 255, 0.13) 1px, transparent 1px);
+    background-size: 22px 22px;
+  }
+
+  .mask-fade {
+    -webkit-mask-image: radial-gradient(ellipse 70% 65% at 50% 40%, #000 30%, transparent 100%);
+    mask-image: radial-gradient(ellipse 70% 65% at 50% 40%, #000 30%, transparent 100%);
+  }
+
+  .mask-fade-x {
+    -webkit-mask-image: linear-gradient(to right, transparent, #000 12%, #000 88%, transparent);
+    mask-image: linear-gradient(to right, transparent, #000 12%, #000 88%, transparent);
+  }
+
+  .hairline {
+    @apply h-px w-full bg-gradient-to-r from-transparent via-white/10 to-transparent;
+  }
+
+  .glow-ring {
+    box-shadow:
+      0 0 0 1px rgba(255, 255, 255, 0.06),
+      inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  }
+
+  .number-label {
+    @apply font-mono text-[11px] tracking-[0.2em] text-slate-500;
+  }
+
+  .nav-link {
+    @apply relative inline-flex items-center rounded-full px-3.5 py-2 text-[13px] font-medium text-slate-400 transition-colors duration-300 hover:text-white;
+  }
+
+  .nav-link[data-active="true"] {
+    @apply text-white;
+  }
+}
+
+@layer utilities {
+  .text-shadow-glow {
+    text-shadow: 0 0 50px rgba(139, 92, 246, 0.35);
+  }
+
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+
+  .preserve-3d {
+    transform-style: preserve-3d;
+  }
+
+  .backface-hidden {
+    backface-visibility: hidden;
+  }
+
+  .animation-paused {
+    animation-play-state: paused;
+  }
+}
+
+@keyframes gradient-pan {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  html,
+  html:not(.lenis) {
+    scroll-behavior: auto;
+  }
+}
