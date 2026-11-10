@@ -1,20 +1,23 @@
-import React from 'react';
-import Banner from './Banner';
-import Skills from './Skills';
-import Projects from './Projects';
-import Contact from './Contact';
-import About from './About';
+import Hero from "../sections/Hero";
+import About from "../sections/About";
+import Skills from "../sections/Skills";
+import Experience from "../sections/Experience";
+import Services from "../sections/Services";
+import Process from "../sections/Process";
+import Projects from "../sections/Projects";
+import Contact from "../sections/Contact";
 
-const Home = () => {
-    return (
-        <div>
-            <Banner></Banner>
-            <About></About>
-            <Skills></Skills>
-            <Projects></Projects>
-            <Contact></Contact>
-        </div>
-    );
-};
-
-export default Home;
+export default function Home() {
+  return (
+    <>
+      <Hero />
+      <About />
+      <Skills />
+      <Experience />
+      <Services />
+      <Process />
+      <Projects />
+      <Contact />
+    </>
+  );
+}
